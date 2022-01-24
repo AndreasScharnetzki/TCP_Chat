@@ -116,41 +116,6 @@ public class ChatTest {
         Assert.assertTrue(logFileReference.toString().contains("hello" + System.lineSeparator() + "world"));
     }
 
-    //FIXME readAllBytes
-    /*
-    @Test
-    public void goodTest02_validCommandWrite_CharSum () throws Exception {
-        Chat cm = createChatMachine();
-        ChatUI objectReference = this.createChatUI();
-
-        //delete oldChatLog to start with a file that will be created just this instant
-        try {
-            File fileToBeDeleted = new File(cm.searchForFile("chatLog.txt"));
-            fileToBeDeleted.delete();
-        } catch (FileNotFoundException e){
-            System.err.println("ERROR Unable to delete or locate chatLogFile");
-            e.printStackTrace();
-        }
-
-        fis = new FileInputStream(cm.searchForFile("TestFile_42Chars.txt"));
-
-        try {
-            objectReference.runUI( fis, os );
-        }catch (Exception NPExc){
-            //The program needs to be terminated this way so file content can be checked
-        }
-
-        String stringOf42Chars = "wowwhowouldhavethoughtthatihavetocheckthis";
-        byte[] testStringAsBytes = stringOf42Chars.getBytes();
-
-        FileInputStream chatLog = new FileInputStream(cm.searchForFile("chatLog.txt"));
-        byte[] contentOfLogFileAsBytes = chatLog.readAllBytes();
-        //Check if number of characters matches with input
-        Assert.assertEquals(testStringAsBytes.length, contentOfLogFileAsBytes.length);
-    }
-    */
-
-    //TODO---------------------not yet implemented----------------------------------------------------------------------
     @Test(expected = FileNotFoundException.class)
     public void goodTest0x_deletingChatLogFileSuccessfully () throws Exception {
         Chat cm = createChatMachine();
